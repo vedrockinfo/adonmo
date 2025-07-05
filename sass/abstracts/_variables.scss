@@ -1,0 +1,17 @@
+// COLORS
+$color-primary: #38833f;
+$color-secondary:#41c3db;
+$color-tertiary:#38833f;
+$color-text:#221f20;
+$color-white:#ffffff;
+$color-cream: #FDF6EC;
+$color-black: #000;
+
+$gradientOne:linear-gradient(-45deg, lighten($color-primary, 20), darken($color-primary, 15));
+
+$fontPrimary:"Poppins", sans-serif;
+$fontSecondary:"Playfair Display", serif;
+// $fontTertiary:"Chintya";
+$fontFour:"Nexa";
+
+$mainBg:url(../images/main-bg-01.jpg);

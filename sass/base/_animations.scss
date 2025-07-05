@@ -1,0 +1,16 @@
+@keyframes slidetop {
+    from {
+      transform: translateY(-30px);
+      opacity: 1; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(-360deg);
+      }
+      100% {
+        transform: rotate(360deg);
+    }
+      }

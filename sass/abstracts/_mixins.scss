@@ -1,0 +1,116 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == maxWidth575 {
+        @media only screen and (max-width: 575px) { @content };    //600px
+    }
+    @if $breakpoint == maxWidth768 {
+        @media only screen and (max-width: 767.9px) { @content };     //900px
+    }
+    @if $breakpoint == minWidth768 {
+        @media only screen and (min-width: 768px) { @content };     //900px
+    }
+    @if $breakpoint == maxWidth992 {
+        @media only screen and (max-width: 991.9px) { @content };    //1200px
+    }
+    @if $breakpoint == minWidth575 {
+        @media only screen and (min-width: 575.1px) { @content };    //1200px
+    }
+    @if $breakpoint == minWidth992 {
+        @media only screen and (min-width: 992px) { @content };    //1200px
+    }
+    @if $breakpoint == maxWidth1200 {
+        @media only screen and (max-width: 1199.9px) { @content };    //1800
+    }
+    @if $breakpoint == minWidth1200 {
+        @media only screen and (min-width: 1200px) { @content };    //1800
+    }
+}
+
+@mixin vector($width: 630px, $height: 624px){
+    content: "";
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: $width;
+    height: $height;
+    position: absolute;
+    @include respond (maxWidth768){
+        transform: scale(0.5);
+    }
+}
+
+@mixin globalBtnOne{
+    background: transparent;
+    color: $color-primary;
+    text-transform: capitalize;
+    padding: 6px 16px;
+    border: 2px solid $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.4s;
+    font-weight: normal;
+    &:hover{
+        text-decoration: none;
+        background: $color-primary;
+        color: $color-white;
+    }
+}
+
+// @mixin globalBtnTHree{
+//     background: $color-tertiary;
+//     color: $color-white;
+//     text-transform: capitalize;
+//     padding: 6px 25px 6px 16px;
+//     display: inline-block;
+//     margin-top: 5rem;
+//     text-decoration: none;
+//     border-radius: 3px;
+//     position: relative;
+//     &::after{
+//         content: "";
+//         background-image: url(../images/btn-bg.png);
+//         position: absolute;
+//         right: -10px;
+//         top: 0;
+//         height: 100%;
+//         width: 100%;
+//         background-size: contain;
+//         background-repeat: no-repeat;
+//         background-position: right;
+//         transform: scale(1.4);
+//         filter: drop-shadow(0px 0px 3px #33333384);
+//     }
+//     &:hover{
+//         text-decoration: none;
+//         color: $color-white
+//     }
+// }
+
+@mixin globalBtnThree{
+    background: transparent;
+    color: $color-text;
+    border: 1px solid $color-text;
+    text-transform: capitalize;
+    padding: 6px 16px;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.4s;
+    &:hover{
+        text-decoration: none;
+        background: $color-white;
+        color: $color-text;
+        border: 1px solid $color-white;
+    }
+}
+
+@mixin globalBtnTwo{
+    @include globalBtnOne;
+    border-radius: 3px;
+    width: 20rem;
+    border-color: $color-primary;
+    color: $color-primary;
+    @include respond (maxWidth575){
+        width: auto;
+    }
+}
+@mixin submitbutton{
+    @include globalBtnTwo;
+}
